@@ -1,0 +1,3 @@
+C:/Users/TJ/source/repos/SCADA_VSA_Design_Project/SCADA_GUI_Demo_V_1_0/SCADA_GUI_Demo_V_1_0/build/CMakeFiles/SCADA_Demo_GUI.dir
+C:/Users/TJ/source/repos/SCADA_VSA_Design_Project/SCADA_GUI_Demo_V_1_0/SCADA_GUI_Demo_V_1_0/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/TJ/source/repos/SCADA_VSA_Design_Project/SCADA_GUI_Demo_V_1_0/SCADA_GUI_Demo_V_1_0/build/CMakeFiles/ZERO_CHECK.dir

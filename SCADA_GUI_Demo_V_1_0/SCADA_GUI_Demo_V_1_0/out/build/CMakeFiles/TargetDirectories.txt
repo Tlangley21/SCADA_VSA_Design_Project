@@ -1,0 +1,5 @@
+C:/Users/Owner/source/repos/SCADA_Project_1/SCADA_GUI_Demo_V_1_0/out/build/CMakeFiles/SCADA_Demo_GUI.dir
+C:/Users/Owner/source/repos/SCADA_Project_1/SCADA_GUI_Demo_V_1_0/out/build/CMakeFiles/edit_cache.dir
+C:/Users/Owner/source/repos/SCADA_Project_1/SCADA_GUI_Demo_V_1_0/out/build/CMakeFiles/rebuild_cache.dir
+C:/Users/Owner/source/repos/SCADA_Project_1/SCADA_GUI_Demo_V_1_0/out/build/CMakeFiles/SCADA_Demo_GUI_autogen_timestamp_deps.dir
+C:/Users/Owner/source/repos/SCADA_Project_1/SCADA_GUI_Demo_V_1_0/out/build/CMakeFiles/SCADA_Demo_GUI_autogen.dir
