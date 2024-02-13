@@ -1,0 +1,12 @@
+# ninja log v5
+6	397	7295463608752416	Scada_GUI_V3_autogen/timestamp	1bc20cad5414144f
+6	397	7295463608752416	Scada_GUI_V3_autogen/mocs_compilation.cpp	1bc20cad5414144f
+6	397	7295463608752416	C:/DevTools/SCADA_GUI_V3/build-Scada_GUI_V3-Desktop_Qt_5_15_16_MSVC2019_64bit-RelWithDebInfo/Scada_GUI_V3_autogen/timestamp	1bc20cad5414144f
+6	397	7295463608752416	C:/DevTools/SCADA_GUI_V3/build-Scada_GUI_V3-Desktop_Qt_5_15_16_MSVC2019_64bit-RelWithDebInfo/Scada_GUI_V3_autogen/mocs_compilation.cpp	1bc20cad5414144f
+402	995	7295463615119176	CMakeFiles/Scada_GUI_V3.dir/main.cpp.obj	eaa5a3a1c336d0a6
+418	1006	7295463615221126	CMakeFiles/Scada_GUI_V3.dir/qledlabel.cpp.obj	683c1d87d79d2169
+423	1018	7295463615354732	CMakeFiles/Scada_GUI_V3.dir/customdelegate.cpp.obj	8bdfed99b834b402
+397	2588	7295463630992272	CMakeFiles/Scada_GUI_V3.dir/Scada_GUI_V3_autogen/mocs_compilation.cpp.obj	329972ea79b9497c
+409	2641	7295463631542404	CMakeFiles/Scada_GUI_V3.dir/mainwindow.cpp.obj	61b2048402b49ef9
+414	4427	7295463649377040	CMakeFiles/Scada_GUI_V3.dir/qcustomplot.cpp.obj	553cf2e13dfd228f
+4427	4797	7295463652985159	Scada_GUI_V3.exe	a037ea1304449cbb

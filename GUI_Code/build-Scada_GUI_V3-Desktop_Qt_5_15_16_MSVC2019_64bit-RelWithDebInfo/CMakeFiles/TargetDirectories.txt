@@ -1,0 +1,8 @@
+C:/DevTools/SCADA_GUI_V3/build-Scada_GUI_V3-Desktop_Qt_5_15_16_MSVC2019_64bit-RelWithDebInfo/CMakeFiles/Scada_GUI_V3.dir
+C:/DevTools/SCADA_GUI_V3/build-Scada_GUI_V3-Desktop_Qt_5_15_16_MSVC2019_64bit-RelWithDebInfo/CMakeFiles/edit_cache.dir
+C:/DevTools/SCADA_GUI_V3/build-Scada_GUI_V3-Desktop_Qt_5_15_16_MSVC2019_64bit-RelWithDebInfo/CMakeFiles/rebuild_cache.dir
+C:/DevTools/SCADA_GUI_V3/build-Scada_GUI_V3-Desktop_Qt_5_15_16_MSVC2019_64bit-RelWithDebInfo/CMakeFiles/list_install_components.dir
+C:/DevTools/SCADA_GUI_V3/build-Scada_GUI_V3-Desktop_Qt_5_15_16_MSVC2019_64bit-RelWithDebInfo/CMakeFiles/install.dir
+C:/DevTools/SCADA_GUI_V3/build-Scada_GUI_V3-Desktop_Qt_5_15_16_MSVC2019_64bit-RelWithDebInfo/CMakeFiles/install/local.dir
+C:/DevTools/SCADA_GUI_V3/build-Scada_GUI_V3-Desktop_Qt_5_15_16_MSVC2019_64bit-RelWithDebInfo/CMakeFiles/Scada_GUI_V3_autogen_timestamp_deps.dir
+C:/DevTools/SCADA_GUI_V3/build-Scada_GUI_V3-Desktop_Qt_5_15_16_MSVC2019_64bit-RelWithDebInfo/CMakeFiles/Scada_GUI_V3_autogen.dir

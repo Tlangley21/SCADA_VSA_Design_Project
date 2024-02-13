@@ -1,0 +1,47 @@
+Main server and Raspberry PI VM integration outline
+
+Main Server (laptop)
+-VM Host software such as VMware, VirtualBox, or KVM to host the VM's
+-Primary VM to host the active SCADA system
+-Secondary VM to serve as a backup to primary
+-Historian VM for logging and data collection
+-Developer VM to serve as an environment for development and updates
+-FreeIPA server for centralized identity and access management. This can be implemented in its own VM or integrated into one listed above
+-Zeek for network secrity and monitoring. This should be installed on the main server since the laptop will be handling network traffic
+
+Raspberry PI Clients
+-Operating system such as Raspberry Pi OS
+-GUI Software
+-FreeIPA Client to integrate into the FreeIPA server for authentication and access control. Install and configure FreeIPA client packages 
+-Zeek could be installed for client-side security monitoring 
+
+                    +------------------------------------------------+
+                    |                    Main Server                 |
+                    |                    (Laptop)                    |
+                    |                                                |
+                    |  +-----------+    +------------+   +--------+  |
+  +-------------+   |  |  Primary  |    |  Secondary |   |Historian|  |   +-------------+
+  |             |   |  |    VM     |    |     VM     |   |   VM    |  |   |             |
+  |  Raspberry  |<----->| (Active) |<-->|  (Backup)  |<->| (Logs)  |<----->|  Raspberry  |
+  |     Pi 1    |   |  +-----------+    +------------+   +--------+  |   |     Pi 2    |
+  | (Launch Pad |   |                                                |   | (Launch Pad |
+  |  Facility)  |   |                  +------------+                |   |  Facility)  |
+  +-------------+   |                  | Developer  |                |   +-------------+
+                    |                  |    VM      |                |
+                    |                  |(Updates &  |                |
+                    |                  | Development|                |
+                    |                  +------------+                |
+                    |                                                |
+                    +---------------------+    +---------------------+
+                                          |    |
+                                      +---v----v---+
+                                      |  FreeIPA   |
+                                      |  Server    |
+                                      |(Identity Mgmt)
+                                      +------------+
+                                           ^
+                                           |
+                                      +----+-----+
+                                      |  Zeek IDS |
+                                      |(Security) |
+                                      +----------+
