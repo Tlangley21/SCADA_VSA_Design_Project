@@ -3,6 +3,7 @@ Main server and Raspberry PI VM integration outline
 Main Server (laptop)
 -VM Host software such as VMware, VirtualBox, or KVM to host the VM's
 -Primary VM to host the active SCADA system
+	-NTP will be hosted here as well
 -Secondary VM to serve as a backup to primary
 -Historian VM for logging and data collection
 -Developer VM to serve as an environment for development and updates
@@ -20,13 +21,13 @@ Raspberry PI Clients
                     |                    (Laptop)                    |
                     |                                                |
                     |  +-----------+    +------------+   +--------+  |
-  +-------------+   |  |  Primary  |    |  Secondary |   |Historian|  |   +-------------+
-  |             |   |  |    VM     |    |     VM     |   |   VM    |  |   |             |
+  +-------------+   |  |  Primary  |    |  Secondary |   |Historian| |     +-------------+
+  |             |   |  |    VM     |    |     VM     |   |   VM    | |     |             |
   |  Raspberry  |<----->| (Active) |<-->|  (Backup)  |<->| (Logs)  |<----->|  Raspberry  |
-  |     Pi 1    |   |  +-----------+    +------------+   +--------+  |   |     Pi 2    |
-  | (Launch Pad |   |                                                |   | (Launch Pad |
-  |  Facility)  |   |                  +------------+                |   |  Facility)  |
-  +-------------+   |                  | Developer  |                |   +-------------+
+  |     Pi 1    |   |  +-----------+    +------------+   +--------+  |     |     Pi 2    |
+  | (Launch Pad |   |                                                |     | (Launch Pad |
+  |  Facility)  |   |                  +------------+                |     |  Facility)  |
+  +-------------+   |                  | Developer  |                |     +-------------+
                     |                  |    VM      |                |
                     |                  |(Updates &  |                |
                     |                  | Development|                |
@@ -45,3 +46,9 @@ Raspberry PI Clients
                                       |  Zeek IDS |
                                       |(Security) |
                                       +----------+
+
+
+
+
+README
+Servers will be running Ubuntu Server 22.04.3
