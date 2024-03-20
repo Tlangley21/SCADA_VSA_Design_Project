@@ -1,0 +1,96 @@
+Installing Zeek
+
+Required Libraries for Zeek
+sudo dnf install cmake make gcc gcc-c++ flex bison libpcap-devel openssl-devel python3 python3-devel swig zlib-devel
+
+sudo dnf config-manager --add-repo https://download.opensuse.org/repositories/security:zeek/Fedora_39/security:zeek.repo
+
+sudo dnf install zeek
+sudo -s
+echo "export PATH=$PATH:/opt/zeek/bin" >> ~/.bashrc
+source ~/.bashrc
+
+Now zeek --version works
+scada_zeek@fedora:~$ echo "export PATH=$PATH:/opt/zeek/bin" >> ~/.bashrc
+scada_zeek@fedora:~$ source ~/.bashrc
+scada_zeek@fedora:~$ zeek --version
+zeek version 6.2.0
+
+/opt/zeek/etc/networks.cfg
+10.0.0.0/8          Private IP space
+172.16.0.0/12       Private IP space
+192.168.0.0/16      Private IP space
+
+/opt/zeek/etc/node.cfg
+Comment following
+#[zeek]
+#type=standalone
+#host=localhost
+#interface=eth0
+Add following
+[zeek-logger]
+type=logger
+host=192.168.8.108
+#
+[zeek-manager]
+type=manager
+host=192.168.8.108
+#
+[zeek-proxy]
+type=proxy
+host=192.168.8.108
+#
+[zeek-worker]
+type=worker
+host=192.168.8.108
+interface=enp0s3
+#
+[zeek-worker-lo]
+type=worker
+host=localhost
+interface=lo
+
+zeekctl check
+root@scada:/home/scada_zeek# zeekctl check
+zeek-logger scripts are ok.
+zeek-manager scripts are ok.
+zeek-proxy scripts are ok.
+zeek-worker scripts are ok.
+zeek-worker-lo scripts are ok.
+
+zeekctl deploy
+
+zeekctl status
+Name         Type    Host             Status    Pid    Started
+zeek-logger  logger  192.168.8.108    running   3313   20 Mar 01:36:28
+zeek-manager manager 192.168.8.108    running   3362   20 Mar 01:36:29
+zeek-proxy   proxy   192.168.8.108    running   3415   20 Mar 01:36:30
+zeek-worker  worker  192.168.8.108    running   3482   20 Mar 01:36:32
+zeek-worker-lo worker  localhost        running   3484   20 Mar 01:36:32
+
+ls -l /opt/zeek/logs/current/
+total 776
+-rw-r--r-- 1 root zeek   1771 Mar 20 01:36 broker.log
+-rw-r--r-- 1 root zeek    308 Mar 20 01:37 capture_loss.log
+-rw-r--r-- 1 root zeek   1932 Mar 20 01:36 cluster.log
+-rw-r--r-- 1 root zeek 111194 Mar 20 01:48 conn.log
+-rw-r--r-- 1 root zeek    491 Mar 20 01:42 dhcp.log
+-rw-r--r-- 1 root zeek 180122 Mar 20 01:48 dns.log
+-rw-r--r-- 1 root zeek  14284 Mar 20 01:44 files.log
+-rw-r--r-- 1 root zeek  10010 Mar 20 01:44 http.log
+-rw-r--r-- 1 root zeek  33233 Mar 20 01:36 loaded_scripts.log
+-rw-r--r-- 1 root zeek    960 Mar 20 01:37 notice.log
+-rw-r--r-- 1 root zeek   9378 Mar 20 01:48 ntp.log
+-rw-r--r-- 1 root zeek  10067 Mar 20 01:41 ocsp.log
+-rw-r--r-- 1 root zeek    209 Mar 20 01:36 packet_filter.log
+-rw-r--r-- 1 root zeek   3380 Mar 20 01:46 quic.log
+-rw-r--r-- 1 root zeek    666 Mar 20 01:36 reporter.log
+-rw-r--r-- 1 root zeek   2848 Mar 20 01:47 ssl.log
+-rw-r--r-- 1 root zeek   1743 Mar 20 01:46 stats.log
+-rw-r--r-- 1 root zeek      0 Mar 20 01:36 stderr.log
+-rw-r--r-- 1 root zeek    204 Mar 20 01:36 stdout.log
+-rw-r--r-- 1 root zeek 337653 Mar 20 01:47 telemetry.log
+-rw-r--r-- 1 root zeek  20717 Mar 20 01:45 weird.log
+
+tail /opt/zeek/logs/current/cluster.log
+tail /opt/zeek/logs/current/conn.log
