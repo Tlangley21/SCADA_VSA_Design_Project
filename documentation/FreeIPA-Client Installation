@@ -1,0 +1,56 @@
+Installing freeipa client
+sudo -s
+dnf -y install chrony
+
+dnf -y install freeipa-client
+
+Set DNS of Client to static ipv4 of Host
+
+ipa-client-install --server=scada.ipa.test --domain ipa.test
+This program will set up IPA client.
+Version 4.11.1
+
+Autodiscovery of servers for failover cannot work with this configuration.
+If you proceed with the installation, services will be configured to always access the discovered server for all operations and will not fail over to other servers in case of failure.
+Proceed with fixed values and no DNS discovery? [no]: yes   
+Do you want to configure chrony with NTP server or pool address? [no]: yes
+Enter NTP source server addresses separated by comma, or press Enter to skip: time.google.com
+Enter a NTP source pool address, or press Enter to skip: 
+Client hostname: zeek.ipa.test
+Realm: IPA.TEST
+DNS Domain: ipa.test
+IPA Server: scada.ipa.test
+BaseDN: dc=ipa,dc=test
+NTP server: time.google.come
+
+Continue to configure the system with these values? [no]: yes
+Synchronizing time
+Configuration of chrony was changed by installer.
+Attempting to sync time with chronyc.
+Process chronyc waitsync failed to sync time!
+Unable to sync time with chrony server, assuming the time is in sync. Please check that 123 UDP port is opened, and any time server is on network.
+User authorized to enroll computers: admin
+Password for admin@IPA.TEST: 
+Successfully retrieved CA cert
+    Subject:     CN=Certificate Authority,O=IPA.TEST
+    Issuer:      CN=Certificate Authority,O=IPA.TEST
+    Valid From:  2024-03-20 05:18:20+00:00
+    Valid Until: 2044-03-20 05:18:20+00:00
+
+Enrolled in IPA realm IPA.TEST
+Created /etc/ipa/default.conf
+Configured /etc/sssd/sssd.conf
+Systemwide CA database updated.
+SSSD enabled
+Configured /etc/openldap/ldap.conf
+Configured /etc/ssh/ssh_config
+Configured /etc/ssh/sshd_config.d/04-ipa.conf
+Configuring ipa.test as NIS domain.
+Configured /etc/krb5.conf for IPA realm IPA.TEST
+Client configuration complete.
+The ipa-client-install command was successful
+
+authselect enable-feature with-mkhomedir
+systemctl enable --now oddjobd
+dnf install cockpit
+systemctl enable --now cockpit.socket (Allows web console)
