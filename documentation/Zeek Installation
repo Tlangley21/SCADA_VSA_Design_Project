@@ -50,6 +50,10 @@ type=worker
 host=localhost
 interface=lo
 
+/opt/zeek/share/zeek/site/local.zeek
+Add line at bottom of file for JSON output:
+@load policy/tuning/json-logs.zeek
+
 zeekctl check
 root@scada:/home/scada_zeek# zeekctl check
 zeek-logger scripts are ok.
@@ -94,3 +98,5 @@ total 776
 
 tail /opt/zeek/logs/current/cluster.log
 tail /opt/zeek/logs/current/conn.log
+jq . /opt/zeek/logs/current/conn.log
+jq . /opt/zeek/logs/current/http.log
