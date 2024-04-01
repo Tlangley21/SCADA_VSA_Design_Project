@@ -189,3 +189,11 @@ scada_ipa@scada:~$ firewall-cmd --add-service={freeipa-ldap,freeipa-ldaps,dns,nt
 success
 scada_ipa@scada:~$ firewall-cmd --runtime-to-permanent
 success
+
+dnf install ufw
+ufw enable
+ufw allow ssh
+
+nano /etc/pam.d/sshd
+Add this line
+session required pam_mkhomedir.so skel=/etc/skel/ umask=0022
